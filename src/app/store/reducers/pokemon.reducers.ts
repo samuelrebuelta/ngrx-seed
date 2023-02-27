@@ -1,5 +1,5 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { setPokemonList } from '../actions/app.actions';
+import { setPokemonList } from '../actions/pokemon.actions';
 import { pokemonInitialState, PokemonState } from '../states/pokemon.state';
 
 const pokemonReducerCreator = createReducer(

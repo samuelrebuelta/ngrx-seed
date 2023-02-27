@@ -1,4 +1,5 @@
 import { createAction, props } from '@ngrx/store';
+import { Pokemon } from 'src/app/pages/pokemon-list/pokemon.model';
 
 export const ActionTypes = {
   FETCH_POKEMON_LIST: '[App] Fetch pokemon list',
@@ -12,5 +13,5 @@ export const fetchPokemonList = createAction(
 
 export const setPokemonList = createAction(
   ActionTypes.SET_POKEMON_LIST,
-  props<{ list: any[] }>()
+  props<{ list: Pokemon[] }>()
 );

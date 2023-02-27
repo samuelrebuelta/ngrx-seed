@@ -1,24 +1,8 @@
-<!-- Bien -->
+<button class="btn" [routerLink]="'/'">Ir a home</button>
+<button class="btn" (click)="fetchPokemonList()">Consultar listado pokemon</button>
 <ng-container *ngIf="(pokemonList$ | async) as pokemonList">
-  Total: {{ totalPokemons }}
-  <div *ngFor="let pokemon of pokemonList; let i = index">
+  <p>Total: {{ totalPokemons }}</p>
+  <div *ngFor="let pokemon of pokemonList; let i = index; trackBy: trackByIndex">
     <p class="pokemon">{{ i + 1 }} - {{ pokemon.name }}</p>
   </div>
 </ng-container>
-
-
-
-<!-- Mal ¿Por qué? -->
-
-<!-- <div *ngFor="let pokemon of pokemonList$ | async">
-  {{ pokemon.name }}
-</div>
-
-<div *ngFor="let pokemon of pokemonList$ | async">
-  {{ pokemon.name }}
-</div> -->
-
-<button class="btn" [routerLink]="'/'">Ir a home</button>
-<button #button class="btn">Haz click</button>
-
-<!-- Ejemplo operadores -->

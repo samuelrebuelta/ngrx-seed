@@ -3,5 +3,6 @@
 }
 
 .btn {
-  margin-left: 50px;
+  display: block;
+  margin-bottom: 20px;
 }

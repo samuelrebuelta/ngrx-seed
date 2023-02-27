@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { map } from 'rxjs';
 import { Observable } from 'rxjs';
-import { hideLoading, showLoading } from './store/actions/loading.actions';
 import { StoreState } from './store/states/store.state';
 
 @Component({
@@ -13,7 +12,7 @@ import { StoreState } from './store/states/store.state';
 })
 export class AppComponent implements OnInit {
 
-  public title = 'Bienvenidos al repo de Angular RxJS, NgRX, Testing and more!';
+  public title = 'Bienvenidos al repo de Angular con NgRX!';
   public showLoading$?: Observable<boolean>;
 
   constructor(
@@ -22,11 +21,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     /** Loading store subscription */
-    this.showLoading$ = this.store.select('loading').pipe(map(el => el.showLoading));
-
-    /** Show loading dispatch example */
-    // this.store.dispatch(showLoading());
-    /** Hide loading dispatch example */
-    // setTimeout(() => this.store.dispatch(hideLoading()), 5000);
+    this.showLoading$ = this.store.select('loading').pipe(
+      map(state => state.showLoading),
+    );  
   }
 }

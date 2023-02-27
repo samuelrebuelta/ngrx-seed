@@ -10,10 +10,6 @@ const routes: Routes = [
     path: 'pokemon-list',
     loadChildren: () => import('./pages/pokemon-list/pokemon-list.module').then(m => m.PokemonListModule)
   },
-  {
-    path: 'operators',
-    loadChildren: () => import('./pages/operators-examples/operators-examples.module').then(m => m.OperatorsExamplesModule)
-  }
 ];
 
 @NgModule({

@@ -17,11 +17,6 @@ import { environment } from "src/environments/environment";
     EffectsModule.forRoot([
       PokemonEffects,
     ]),
-    StoreDevtoolsModule.instrument({
-      maxAge: 25, // Retains last 25 states
-      logOnly: environment.production, // Restrict extension to log-only mode
-      autoPause: true, // Pauses recording actions and state changes when the extension window is not open
-    }),
   ],
   exports: [StoreModule],
   providers: []

@@ -25,13 +25,9 @@ export class PokemonListComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.pokemonList$ = this.store.select(selectPokemonList)
-      .pipe(tap(pokemonList => this.totalPokemons = pokemonList.length));
-  }
-
-  ngOnDestroy(): void {
-    this.unsubscribe$.next();
-    this.unsubscribe$.complete();
+    this.pokemonList$ = this.store.select(selectPokemonList).pipe(
+      tap(pokemonList => this.totalPokemons = pokemonList.length)
+    );
   }
 
   public fetchPokemonList() {
@@ -40,5 +36,10 @@ export class PokemonListComponent implements OnInit, OnDestroy {
 
   public trackByIndex(index: number): number {
     return index;
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 }

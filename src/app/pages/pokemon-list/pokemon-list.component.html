@@ -1,5 +1,6 @@
 <button class="btn" [routerLink]="'/'">Ir a home</button>
 <button class="btn" (click)="fetchPokemonList()">Consultar listado pokemon</button>
+
 <ng-container *ngIf="(pokemonList$ | async) as pokemonList">
   <p>Total: {{ totalPokemons }}</p>
   <div *ngFor="let pokemon of pokemonList; let i = index; trackBy: trackByIndex">
